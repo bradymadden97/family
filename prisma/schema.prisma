@@ -1,0 +1,49 @@
+// Docs: https://pris.ly/d/prisma-schema
+// To re-generate DB: `npx prisma db push`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Game {
+  // Fields
+  id          Int      @id @default(autoincrement())
+  status      String   @default("LOBBY") // LOBBY, READING_NAMES, IN_PROGRESS, COMPLETED
+  timeCreated DateTime @default(now())
+  hostId      String
+
+  // Edges
+  host    Player         @relation(fields: [hostId], references: [id])
+  players PlayerInGame[]
+}
+
+model Player {
+  // Fields
+  id String @id @default(uuid())
+
+  // Edges
+  games PlayerInGame[]
+
+  // References
+  hostedGames Game[]
+}
+
+model PlayerInGame {
+  // Fields
+  gameId       Int
+  playerId     String
+  joinedAt     DateTime @default(now())
+  character    String?
+  isSpectating Boolean  @default(false)
+
+  // Edges
+  game   Game   @relation(fields: [gameId], references: [id])
+  player Player @relation(fields: [playerId], references: [id])
+
+  @@id([gameId, playerId])
+}

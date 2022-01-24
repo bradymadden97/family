@@ -1,0 +1,193 @@
+h2 {
+  color: var(--color-links);
+  font-size: 5rem;
+  line-height: 5rem;
+}
+h4 {
+  font-weight: 100;
+  white-space: pre-line;
+}
+.imageContainer {
+  flex-grow: 1;
+  width: 100%;
+  margin: 24px 0;
+  background-image: url("/Family.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 6rem;
+}
+.codeContainer {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+.button {
+  font-weight: 300;
+}
+.heading {
+  flex-grow: 1;
+}
+.paginateButton {
+  min-width: 4rem;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .heading {
+    display: flex;
+  }
+  .imageContainer {
+    height: 15rem;
+    background-position: right;
+    margin: auto 0;
+    margin-right: 2rem;
+  }
+  h2 {
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+  h4 {
+    margin-top: 1rem;
+  }
+  .codeContainer {
+    margin-left: 2rem;
+    padding-top: 1.5rem;
+    text-align: left;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.buttonContainer {
+  margin-bottom: 4rem;
+}
+.charName {
+  font-weight: 100;
+  font-size: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.charNameWrapper {
+  text-align: center;
+}
+
+.characterForm {
+  margin: 1rem;
+}
+
+.characterInput {
+  border-radius: 8px;
+  min-width: 0;
+  width: 100%;
+  height: 3rem;
+}
+.characterForm button {
+  width: 100%;
+  margin: 0;
+  margin-top: 0.5rem;
+  height: 3rem;
+}
+
+.everyonesIn {
+  margin-top: 2rem;
+}
+
+.topRight {
+  display: block;
+  position: absolute;
+  right: 0;
+  float: right;
+  margin: 0.5rem;
+  width: auto;
+  max-width: 8rem;
+  text-align: right;
+}
+.topLeft {
+  display: block;
+  position: absolute;
+  left: 0;
+  margin: 0.5rem;
+  width: auto;
+  max-width: 8rem;
+  text-align: right;
+}
+.playSpectateBtn {
+  font-size: 1rem;
+  margin: 0.25rem;
+  display: inline-block;
+  padding: 0.5rem;
+}
+.characterInputWrapper {
+  position: relative;
+}
+.characterInputWrapper .characterInputHideShow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  margin-top: 0.3rem;
+  margin-right: 1.5rem;
+  background-image: url("/eye.svg");
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+.characterInputWrapper .characterInputHideShow:active {
+  border: 0;
+  text-decoration: none;
+  outline: none;
+}
+.characterInputWrapper .characterInputHideShow.show {
+  background-image: url("/eye-slash.svg");
+}
+
+.counterContainer {
+  display: flex;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.counterContainer div {
+  flex-grow: 1;
+}
+.editCharacterBtn {
+  font-size: 1rem;
+  display: inline-block;
+  padding: 0.5rem;
+  width: auto;
+  margin: 0.25rem auto;
+}
+
+@media screen and (min-width: 600px) {
+  .characterForm {
+    display: flex;
+  }
+  .characterInputWrapper {
+    flex-grow: 1;
+    width: auto;
+  }
+  .characterForm button {
+    width: auto;
+  }
+  .characterForm button[type="submit"] {
+    margin: 0;
+    margin-left: 0.5rem;
+  }
+  .contentContainer {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .topRight {
+    max-width: unset;
+  }
+}

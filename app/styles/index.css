@@ -1,0 +1,48 @@
+.indexContainer {
+  display: flex;
+
+  flex-direction: column;
+  padding: 24px 0px;
+  overflow: hidden;
+  position: relative;
+}
+.indexContainer img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.heading {
+  flex-grow: 1;
+}
+.buttonWrapper {
+  display: flex;
+}
+.joinLink {
+  flex-grow: 1;
+}
+.indexBtn {
+  font-size: 1.65rem;
+  font-weight: 300;
+  border: solid;
+  border-width: 0.25rem;
+  border-color: var(--color-links);
+}
+.invertBtn {
+  background-color: var(--color-background);
+  color: var(--color-links);
+}
+.invertBtn:hover {
+  color: var(--color-links);
+}
+.invertBtn:active {
+  background-color: var(--color-background-hover);
+}
+.imageContainer {
+  flex-grow: 1;
+  width: 100%;
+  margin: 24px auto;
+  background-image: url("/Family.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 20rem;
+}
