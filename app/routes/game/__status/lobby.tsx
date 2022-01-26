@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, useTransition } from "remix";
-import { GameLoaderData, PlayerData } from "../$code";
+import { GameLoaderData } from "../$code";
 
 const EMOJIS = [
   "🦊",

@@ -6,16 +6,10 @@ import {
   LoaderFunction,
   MetaFunction,
   redirect,
-  useFetcher,
-  useLoaderData,
-  useLocation,
   useParams,
-  useResolvedPath,
 } from "remix";
-import { connect, Socket } from "socket.io-client";
-import { DefaultEventsMap } from "socket.io/dist/typed-events";
+
 import useRefetch from "~/hooks/useRefetch";
-import useRefetchOnVisible from "~/hooks/useRefetchOnVisible";
 import useSocket from "~/hooks/useSocket";
 
 import { gameIdFromCode } from "~/utils/game.server";
