@@ -39,6 +39,7 @@ export function getPlayerSession(request: Request) {
 export async function getPlayerId(request: Request) {
   const session = await getPlayerSession(request);
   const playerId = session.get(PLAYER_COOKIE_NAME);
+  console.log("playerid from cookie", playerId);
   if (!playerId || typeof playerId !== "string") return null;
 
   const loadPlayer = await db.player.findUnique({
@@ -51,6 +52,7 @@ export async function getPlayerId(request: Request) {
 
 export async function requirePlayerId(request: Request) {
   const playerId = await getPlayerId(request);
+  console.log("playerid", playerId);
   if (playerId === null) {
     throw redirect("/");
   }
