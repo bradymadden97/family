@@ -115,6 +115,8 @@ export async function loadGame(
   const me = nullthrows(players.find((player) => player.playerId === playerId));
   const isHost = gameData.game.hostId === playerId;
 
+  console.log(gameData);
+
   if (gameData.game.status === "COMPLETED") {
     throw redirect("/");
   }

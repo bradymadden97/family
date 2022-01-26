@@ -64,7 +64,6 @@ export let loader: LoaderFunction = async ({
   request,
   params,
 }): Promise<GameLoaderData> => {
-  console.log(params.code);
   if (params.code == undefined) {
     throw redirect("/");
   }
