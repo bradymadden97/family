@@ -24,7 +24,8 @@ model Game {
 
 model Player {
   // Fields
-  id String @id @default(uuid())
+  id          String   @id @default(uuid())
+  timeCreated DateTime @default(now())
 
   // Edges
   games PlayerInGame[]
