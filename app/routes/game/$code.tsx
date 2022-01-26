@@ -105,7 +105,8 @@ export const action: ActionFunction = async ({
       returnData = await changeGameStatus(request, params.code, "IN_PROGRESS");
       break;
     case "finish_game":
-      await changeGameStatus(request, params.code, "COMPLETED");
+      returnData = await changeGameStatus(request, params.code, "COMPLETED");
+      emitSocketUpdate(context.socket, String(returnData.game.id));
       throw redirect("/");
     case "set_character":
       const character = form.get("character");
