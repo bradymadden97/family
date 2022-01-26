@@ -1,6 +1,12 @@
-import type { LinksFunction } from "remix";
+import type { LinksFunction, MetaFunction } from "remix";
 import globalStyles from "../styles/global.css";
 import localStyles from "../styles/index.css";
+
+export const meta: MetaFunction = () => {
+  return {
+    title: `Play Family`,
+  };
+};
 
 export const links: LinksFunction = () => {
   return [

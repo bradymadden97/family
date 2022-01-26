@@ -1,6 +1,7 @@
 import {
   ActionFunction,
   Form,
+  MetaFunction,
   redirect,
   useActionData,
   useTransition,
@@ -28,6 +29,12 @@ export const links: LinksFunction = () => {
       href: "https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap",
     },
   ];
+};
+
+export const meta: MetaFunction = () => {
+  return {
+    title: `Play Family`,
+  };
 };
 
 export const action: ActionFunction = async ({ request, context }) => {

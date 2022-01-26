@@ -4,6 +4,7 @@ import {
   ActionFunction,
   Form,
   LoaderFunction,
+  MetaFunction,
   redirect,
   useFetcher,
   useLoaderData,
@@ -57,6 +58,12 @@ export type GameLoaderData = {
     isHost: boolean;
     isSpectating: boolean;
     character: String | null;
+  };
+};
+
+export const meta: MetaFunction = ({ params }) => {
+  return {
+    title: `Family | ${params.code ?? ""}`,
   };
 };
 
