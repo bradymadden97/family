@@ -36,7 +36,10 @@ export default function Lobby(props: { data: GameLoaderData }) {
           <div>
             <h1>
               {readyPlayers.map((player) => (
-                <span key={String(player.playerId)}>
+                <span
+                  style={{ marginLeft: "4px", marginRight: "4px" }}
+                  key={String(player.playerId)}
+                >
                   {EMOJIS[new Date(player.joinedAt).getTime() % EMOJIS.length]}
                 </span>
               ))}
