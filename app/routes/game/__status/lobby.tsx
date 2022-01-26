@@ -74,7 +74,7 @@ export default function Lobby(props: { data: GameLoaderData }) {
                   className="characterInput"
                   type={showCharText ? "text" : "password"}
                   name="character"
-                  placeholder="Ex. Tony Bennett"
+                  placeholder="Ex: Tony Bennett"
                   autoFocus={true}
                   autoComplete="off"
                   autoCapitalize="off"
