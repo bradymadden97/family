@@ -9,17 +9,11 @@ import {
 
 export const action: ActionFunction = async ({ request, params }) => {
   const playerId = await createOrLoadPlayerId(request);
-  let game = await db.game.create({
+  const game = await db.game.create({
     data: {
       host: { connect: { id: playerId } },
       players: { create: [{ playerId }] },
     },
-  });
-  game = await db.game.update({
-    where: {
-      id: game.id,
-    },
-    data: {},
   });
   const code = codeFromGameId(game);
   const session = await storage.getSession();

@@ -43,7 +43,7 @@ app.use(express.static("public/build", { immutable: true, maxAge: "1y" }));
 app.use(morgan("tiny"));
 app.all(
   "*",
-  MODE === "production"
+  MODE !== "production"
     ? createRequestHandler({ build: require("./build") })
     : (req, res, next) => {
         purgeRequireCache();
