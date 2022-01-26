@@ -40,6 +40,17 @@ app.use(express.static("public", { maxAge: "1h" }));
 // Remix fingerprints its assets so we can cache forever
 app.use(express.static("public/build", { immutable: true, maxAge: "1y" }));
 
+if (
+  process.env.NODE_ENV === "production" &&
+  process.env.USE_SECURE_COOKIE === "true"
+) {
+  app.use((req, res, next) => {
+    if (req.header("x-forwarded-proto") !== "https")
+      res.redirect(`https://${req.header("host")}${req.url}`);
+    else next();
+  });
+}
+
 app.use(morgan("tiny"));
 app.all(
   "*",
