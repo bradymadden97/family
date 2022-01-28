@@ -195,7 +195,7 @@ export default function GameRoute() {
           )}
         </Form>
       );
-      codeText = "Join at www.family\nEnter game code:";
+      codeText = "Join at play-family.herokuapp.com\nEnter game code:";
       break;
     case "READING_NAMES":
     case "IN_PROGRESS":
